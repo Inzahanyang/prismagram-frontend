@@ -12,16 +12,18 @@ const getSize = (size) => {
     number = 150;
   }
   return `
-    width:${number}px;
-    height:${number}px;
-  `;
+        width:${number}px;
+        height:${number}px;
+        `;
 };
+
 const Container = styled.div`
-  ${(props) => getSize(props.size)};
-  background-image: url("https://image.flaticon.com/icons/svg/2660/2660147.svg");
-  background-size: cover;
-  border-radius: 50%;
+  ${(props) => getSize(props.size)}
+  background-image:url(${(props) => props.url});
+  background-size:cover;
+  border-radius:50%;
 `;
+
 const Avatar = ({ size = "sm", url }) => <Container size={size} url={url} />;
 
 Avatar.propTypes = {
