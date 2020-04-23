@@ -1,0 +1,18 @@
+import React from "react";
+import styled from "styled-components";
+import FatText from "../../Components/FatText";
+
+const Wrapper = styled.div`
+  height: 50vh;
+  text-align: center;
+`;
+
+const SearchPresenter = ({ searchTerm, loading }) => {
+  return (
+    <Wrapper>
+      {searchTerm === undefined && <FatText text={"Search for something"} />}
+    </Wrapper>
+  );
+};
+
+export default SearchPresenter;
